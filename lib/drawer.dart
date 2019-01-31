@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './pages/calendar_page.dart';
 
 class MyDrawer extends StatelessWidget
 {
@@ -24,6 +25,10 @@ class MyDrawer extends StatelessWidget
           new ListTile(
             title: new Text("Kalender"),
             trailing: new Icon(Icons.today),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new CalendarPage()));
+            } 
           ),
           new ListTile(
             title: new Text("Umfragen"),
@@ -34,6 +39,7 @@ class MyDrawer extends StatelessWidget
           new ListTile(
             title: new Text("Close"),
             trailing: new Icon(Icons.cancel),
+            onTap: () => Navigator.of(context).pop()
           )
         ],
       ),
